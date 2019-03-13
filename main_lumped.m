@@ -231,7 +231,7 @@ for k = 1:Nk
     assert(length(Itest{k}) == nk(k));
    
     % train model
-    LSTMmodel{k} = trainLSTM_simple(trainInputs(Itrain{k}),trainTargets(Itrain{k}),LSTMtrainParms);
+    LSTMmodel{k} = trainLSTM(trainInputs(Itrain{k}),trainTargets(Itrain{k}),LSTMtrainParms);
 
     % test predictions
     LSTMpreds(Itest{k}) = predict(LSTMmodel{k},testInputs(Itest{k}))';
